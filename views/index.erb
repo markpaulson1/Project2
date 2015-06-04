@@ -1,0 +1,46 @@
+<h1>Gay Parents Chat Room</h1>
+
+<% if logged_in? %> 
+<p>you are logged in <%= session[:user_name]%></p>
+<% else %>
+<form action="/users/login" method="POST">
+  <input type="text" name="email" placeholder="Enter Name"><br>
+  <input type="password" name="password" placeholder="Enter Password">
+  <input type="submit" value="LOG IN">
+</form>
+<% end%>
+
+
+<% if logged_in? %>
+<h2>Create New Discussion</h2>
+<h3>Select Topic</h3>
+<form action="/messages" method="POST">
+<input type="radio" name="topic" value="surrogacy">Becoming Parents<br>
+<input type="radio" name="topic" value="toddlers">First Years<br>
+<input type="radio" name="topic" value="school">Schools and Education<br>
+<input type="radio" name="topic" value="mental_health">Keeping Sane<br>
+<h3>What's Your Concern?</h3>
+<input type="text" name="message" placeholder="Topic or Concern"><br>
+<input type="text" name="name" placeholder="Name"><br>
+<input type="submit" value="SUBMIT">
+</form>
+<% else %>
+<h2>Sign-up Form</h2>
+<form action="/users" method="POST">
+	<input type="text" name="name" placeholder="Name"><br>
+	<input type="email" name="email" placeholder="email"><br>
+	<input type="password" name="password" placeholder="password"><br>
+	<input type="submit" value="SUBMIT">
+</form>
+<% end %>
+
+<div class="messages">
+	<% @results.each do |row| %>
+<div class="message">
+	<h3><%= row["topic"] %> </h3>
+	<p class="whitebkg" >
+		<%= row["message"] %>
+	</p>
+</div>
+<% end%>
+</div>
