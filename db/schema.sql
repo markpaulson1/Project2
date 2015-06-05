@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS gayparents;
-CREATE DATABASE gayparents;
-\c gayparents
+DROP DATABASE IF EXISTS newdads;
+CREATE DATABASE newdads;
+\c newdads
 
 
 CREATE TABLE users (

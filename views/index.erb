@@ -1,10 +1,10 @@
-<h1>Gay Parents Chat Room</h1>
+<h1>New Dad's Chat Room</h1>
 
 <% if logged_in? %> 
 <p>you are logged in <%= session[:user_name]%></p>
 <% else %>
 <form action="/users/login" method="POST">
-  <input type="text" name="email" placeholder="Enter Name"><br>
+  <input type="text" name="email" placeholder="Enter Email"><br>
   <input type="password" name="password" placeholder="Enter Password">
   <input type="submit" value="LOG IN">
 </form>
@@ -15,10 +15,12 @@
 <h2>Create New Discussion</h2>
 <h3>Select Topic</h3>
 <form action="/messages" method="POST">
-<input type="radio" name="topic" value="surrogacy">Becoming Parents<br>
+<input type="radio" name="topic" value="surrogacy">Surrogacy<br>
+<input type="radio" name="topic" value="adoption">Adoption<br>
+<input type="radio" name="topic" value="pregnancy">Pregnancy<br>
 <input type="radio" name="topic" value="toddlers">First Years<br>
-<input type="radio" name="topic" value="school">Schools and Education<br>
-<input type="radio" name="topic" value="mental_health">Keeping Sane<br>
+<input type="radio" name="topic" value="schools">Schools and Education<br>
+<input type="radio" name="topic" value="sanity">Keeping Sane<br>
 <h3>What's Your Concern?</h3>
 <input type="text" name="message" placeholder="Topic or Concern"><br>
 <input type="text" name="name" placeholder="Name"><br>
@@ -41,6 +43,25 @@
 	<p class="whitebkg" >
 		<%= row["message"] %>
 	</p>
+	<h3 class="addcomment">Add a Comment</h3>
+		<div class ="comments">
+		<% 
+		<p>comment</p>
+	</div>
 </div>
 <% end%>
+
+
+
+
+
 </div>
+
+
+
+
+
+
+
+
+

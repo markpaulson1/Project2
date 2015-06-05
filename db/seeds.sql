@@ -1,4 +1,4 @@
-\c gayparents
+\c newdads
 TRUNCATE TABLE users, messages, comments RESTART IDENTITY;
 
 
@@ -19,8 +19,9 @@ VALUES
  ;
 
 INSERT INTO comments
-  (message_id, user_id, message, created_at)
-  (2, 1, 'They come from the lettuce patch', CURRENT_TIMESTAMP),
+ (message_id, user_id, message, created_at)
+ VALUES
+ (2, 1, 'They come from the lettuce patch', CURRENT_TIMESTAMP),
  (2, 2, 'The stork brings them', CURRENT_TIMESTAMP),
  (1, 1, 'Lets go dingo hunting', CURRENT_TIMESTAMP),
  (3, 2, 'There is a great one on 86th and Amsterdam called Little Minds', CURRENT_TIMESTAMP)
