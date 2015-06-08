@@ -23,12 +23,25 @@ module NewDadsChat
     get('/') do
 
       @results = $db.exec_params("SELECT * FROM messages")
-      @comments = $db.exec_params("SELECT comments.*,  FROM comments WHERE ")
+      @comments = $db.exec_params("SELECT messages.*, comments.* FROM messages LEFT JOIN comments
+        ON comments.message_id = messages.id WHERE messages.user_id = comments.user_id;")
 
 
-      # ("SELECT tweets.*, users.name AS tweeter FROM tweets JOIN users ON users.id = tweets.user_id;")
+
+      # ("SELECT messages.*, comments.* FROM comments JOIN messages ON comments.user_id = messages.user_id WHERE comments.message_id = messages.id;")
+
+      # ("SELECT messages.*, comments.* FROM comments JOIN messages ON comments.user_id = messages.user_id WHERE comments.user_id = messages.id;")
+
+      # ("SELECT comments.*, messages.name FROM comments JOIN messages ON messages.user_id = comments.user_id;")
+      # ("SELECT tweets.*, users.name  FROM tweets JOIN users ON users.id = tweets.user_id;")
 
       erb :index
+    end
+
+    post '/users/addcomment' do
+      # results = $db.exec_params("INSERT INTO comments(message_id, user_id, comment, created_at) VALUES ()")
+
+      redirect '/'
     end
 
   post '/users' do

@@ -1,0 +1,251 @@
+@import url(http://fonts.googleapis.com/css?family=Exo+2:300,500,100);
+
+body {
+  background: linear-gradient(#FFFFFF, #96DAF6);;
+}
+
+.tags{
+font-family: helvetica;
+}
+
+header{
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+h3{
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+}
+h2{
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+  color: #BDD96B;
+  padding: 0;
+  margin: 3px;
+}
+
+.logbox{
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 100;
+  padding-left: 30px;
+  font-size: 14px;
+  width: 250px;
+  height: 40px;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.commentbox{
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 100;
+  padding-left: 10px;
+  font-size: 14px;
+  width: 430px;
+  height: 40px;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.namebox{
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 100;
+  padding-left: 10px;
+  font-size: 14px;
+  width: 180px;
+  height: 40px;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.createsubmit{
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 100px;
+  padding-left: 10px;
+  font-size: 14px;
+  color: #FFFFFF;
+  background: #BDD96B;
+  border: none;
+   width: 150px;
+  height: 42px;
+}
+
+.signup{
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 100;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  width: 283px;
+  height: 40px;
+  margin-right: none;
+  margin-left: none;
+}
+
+.concern{
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 100;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  width: 283px;
+  height: 100px;
+  margin-right: none;
+  margin-left: none;
+
+}
+
+.concernname{
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 100;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  width: 283px;
+  height: 30px;
+  margin-right: none;
+  margin-left: none;
+}
+
+.commenting{
+margin-left: 20px;
+margin-top: px;
+
+}
+
+
+.concernsubmit{
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 100px;
+  padding-left: 10px;
+  font-size: 14px;
+  color: #FFFFFF;
+  background: #BDD96B;
+  border: none;
+   width: 296px;
+  height: 42px;
+}
+
+.logging{
+  margin-top: 20px;
+}
+
+#loggedin{
+  font-size: 22px;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 100;
+  color: #BDD96B;
+  text-align: center;
+}
+
+.logsubmit{
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 100px;
+  padding-left: 10px;
+  font-size: 14px;
+  color: #FFFFFF;
+  background: #BDD96B;
+  border: none;
+   width: 204px;
+  height: 42px;
+}
+
+.signupsubmit{
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 100px;
+  padding-left: 10px;
+  font-size: 14px;
+  color: #FFFFFF;
+  background: #BDD96B;
+  border: none;
+   width: 296px;
+  height: 42px;
+}
+
+.sort{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.container{
+margin: auto;
+
+}
+
+.leftbar{
+  background: white;
+  width: 300px;
+  float: left;
+  height: 800px;
+  margin-right: 20px;
+  margin-left: 20px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.outer{
+margin-bottom: 20px;
+background: white;
+float: left;
+ width: 900px;
+  height: 200px;
+  border-radius: 20px;
+
+}
+
+.messages{
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 100;
+  margin-bottom: 20px;
+  padding: 20px 0px 20px 0px;
+}
+
+.messagetopic{
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 300;
+  margin-left: 20px;
+  padding: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-size: 20px;
+
+
+}
+
+label{
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 100;
+}
+
+.sortlist{
+  text-decoration: none;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 100;
+  font-size: 20px;
+  color: #6E6E6E;
+
+}
+
+.message{
+  padding-left: 20px;
+  margin: 0;
+  overflow: auto;
+  font-size: 32px;
+
+}
+
+.addcomment{
+  padding-left: 20px;
+  margin: 0;
+  font-size: 15px;
+  overflow: auto;
+}
+
+
+
+
+
+

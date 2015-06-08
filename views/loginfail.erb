@@ -1,7 +1,11 @@
+<header>
+		<img id="logo" src="/images/newdads.svg" alt="New Dads Chat Room" style="width:1000px;">
+	</header>
+
 
 <form action="/users/login" method="POST">
-  <input type="text" name="email" placeholder="Enter Email"><br>
-  <input type="password" name="password" placeholder="Enter Password">
-  <input type="submit" value="LOG IN">
+  <input class="logbox" type="text" name="email" placeholder="Enter Email">
+  <input class="logbox" type="password" name="password" placeholder="Enter Password">
+  <input class="logsubmit" type="submit" value="LOG IN">
 </form>
-<p><%= @message %></p>
+<p id="loggedin"><%= @message %></p>

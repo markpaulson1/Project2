@@ -24,6 +24,6 @@ CREATE TABLE comments (
   id SERIAL PRIMARY KEY,
   message_id INTEGER NOT NULL REFERENCES messages(id),
   user_id INTEGER NOT NULL REFERENCES users(id),
-  message VARCHAR NOT NULL,
+  comment VARCHAR NOT NULL,
   created_at TIMESTAMP NOT NULL
 );

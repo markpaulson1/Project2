@@ -1,61 +1,85 @@
-<h1>New Dad's Chat Room</h1>
+<header>
+		<img id="logo" src="/images/newdads.svg" alt="New Dads Chat Room" style="width:1000px;">
 
-<% if logged_in? %> 
-<p>you are logged in <%= session[:user_name]%></p>
-<% else %>
-<form action="/users/login" method="POST">
-  <input type="text" name="email" placeholder="Enter Email"><br>
-  <input type="password" name="password" placeholder="Enter Password">
-  <input type="submit" value="LOG IN">
-</form>
-<% end%>
+		<% if logged_in? %> 
+		<p id="loggedin">You are logged in <%= session[:user_name]%>
+		<% else %>
+		<form class="logging"action="/users/login" method="POST">
+		  <input class="logbox" type="text" name="email" placeholder="Enter Email">
+		  <input class="logbox" type="password" name="password" placeholder="Enter Password">
+		  <input class="logsubmit" type="submit" value="LOG IN">
+		</form>
+		<% end%>
+</header>
 
+<div class="container">
 
+<div class="leftbar">
 <% if logged_in? %>
 <h2>Create New Discussion</h2>
 <h3>Select Topic</h3>
 <form action="/messages" method="POST">
-<input type="radio" name="topic" value="surrogacy">Surrogacy<br>
-<input type="radio" name="topic" value="adoption">Adoption<br>
-<input type="radio" name="topic" value="pregnancy">Pregnancy<br>
-<input type="radio" name="topic" value="toddlers">First Years<br>
-<input type="radio" name="topic" value="schools">Schools and Education<br>
-<input type="radio" name="topic" value="sanity">Keeping Sane<br>
+<input id="radio" type="radio" name="topic" value="surrogacy"><label for="surrogacy">Surrogacy</label><br>
+<input id="radio" type="radio" name="topic" value="adoption"><label for="adoption">Adoption</label><br>
+<input id="radio" type="radio" name="topic" value="pregnancy"><label for="pregnancy">Pregnancy</label><br>
+<input id="radio" type="radio" name="topic" value="toddlers"><label for="toddlers">First Years</label><br>
+<input id="radio" type="radio" name="topic" value="schools"><label for="schools">Schools and Education</label><br>
+<input id="radio" type="radio" name="topic" value="sanity"><label for="sanity">Keeping Sane</label><br>
 <h3>What's Your Concern?</h3>
-<input type="text" name="message" placeholder="Topic or Concern"><br>
-<input type="text" name="name" placeholder="Name"><br>
-<input type="submit" value="SUBMIT">
+<textarea class="concern" name="message" rows="4" cols="50" placeholder="Topic or Concern"></textarea>
+<input class="concernname" type="text" name="name" placeholder="Name"><br>
+<input class="concernsubmit" type="submit" value="SUBMIT">
 </form>
 <% else %>
 <h2>Sign-up Form</h2>
 <form action="/users" method="POST">
-	<input type="text" name="name" placeholder="Name"><br>
-	<input type="email" name="email" placeholder="email"><br>
-	<input type="password" name="password" placeholder="password"><br>
-	<input type="submit" value="SUBMIT">
+	<input class="signup" type="text" name="name" placeholder="Name"><br>
+	<input class="signup" type="email" name="email" placeholder="email"><br>
+	<input class="signup" type="password" name="password" placeholder="password"><br>
+	<input class="signupsubmit" type="submit" value="SUBMIT">
 </form>
 <% end %>
-
-<div class="messages">
-	<% @results.each do |row| %>
-<div class="message">
-	<h3><%= row["topic"] %> </h3>
-	<p class="whitebkg" >
-		<%= row["message"] %>
-	</p>
-	<h3 class="addcomment">Add a Comment</h3>
-		<div class ="comments">
-		<% 
-		<p>comment</p>
-	</div>
-</div>
-<% end%>
-
-
-
-
+<div class="sort">
+<h2>Sort By Topic</h2>
+<a class="sortlist" name="topic" value="" href="/">Surrogacy</a><br>
+<a class="sortlist" name="topic" value="" href="/">Adoption</a><br>
+<a class="sortlist" name="topic" value="" href="/">Pregnancy</a><br>
+<a class="sortlist" name="topic" value="" href="/">First Years</a><br>
+<a class="sortlist" name="topic" value="" href="/">Schools and Education</a><br>
+<a class="sortlist" name="topic" value="" href="/">Keeping Sane</a><br>
 
 </div>
+
+</div> <!--leftbar end-->
+
+
+
+<% @results.each do |row| %>
+<div class="outer">
+	<div class="messages">
+		<p class="messagetopic"><%= row["topic"].capitalize %></p>
+		<p class="message" ><%= row["message"] %></p>
+				
+		<h3 class="addcomment">Comments</h3>
+					<% @comments.each do |row| %>
+					<ul>
+					<li><%= row["comment"] %></li>
+					</ul>
+					<%end%>
+	<h3 class="addcomment">Add Comments</h3>
+		<form class="commenting" action="/users/addcomment" method="POST">
+		  <input class="commentbox" type="text" name="comment" placeholder="Add Comment">
+		  <input class="namebox" type="text" name="name" placeholder="Enter Name">
+		  <input class="createsubmit" type="submit" value="CREATE">
+		</form>
+
+						</div>
+			</div>
+				<% end%>
+
+	  
+
+
 
 
 

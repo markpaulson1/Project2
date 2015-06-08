@@ -13,13 +13,13 @@ VALUES
 INSERT INTO messages
   (user_id, topic, message, created_at)
 VALUES
- (2, 'HELP!', 'A dingo ate my baby', CURRENT_TIMESTAMP),
- (3, 'Confused', 'Where do babies come from?', CURRENT_TIMESTAMP),
- (1, 'School Help?', 'Any thoughts on where the best school is on the upper west side?', CURRENT_TIMESTAMP)
+ (2, 'Sanity', 'A dingo ate my baby', CURRENT_TIMESTAMP),
+ (3, 'Pregnancy', 'Where do babies come from?', CURRENT_TIMESTAMP),
+ (1, 'Schools', 'Any thoughts on where the best school is on the UWS?', CURRENT_TIMESTAMP)
  ;
 
 INSERT INTO comments
- (message_id, user_id, message, created_at)
+ (message_id, user_id, comment, created_at)
  VALUES
  (2, 1, 'They come from the lettuce patch', CURRENT_TIMESTAMP),
  (2, 2, 'The stork brings them', CURRENT_TIMESTAMP),
