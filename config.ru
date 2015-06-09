@@ -1,7 +1,23 @@
+require 'rubygems'
+require 'bundler'
 require 'pg'
-require 'pry'
 require 'sinatra/base'
-require 'sinatra/reloader'
+
+Bundler.require(:default, ENV['RACK_ENV'] || 'development')
+
+
 require_relative './app'
+use Rack::MethodOverride
 
 run NewDadsChat::Server
+
+
+
+
+
+
+
+
+
+
+

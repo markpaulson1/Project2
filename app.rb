@@ -10,11 +10,23 @@ module NewDadsChat
     # Use _method magic to allow put/delete forms in browsers that don't support it.
     enable :method_override # same as doing use Rack::MethodOverride
 
-    $db = PG.connect({dbname: 'newdads'})
 
     configure :development do
+      $db = PG.connect dbname: "newdads", host: "localhost"
       register Sinatra::Reloader
     end
+
+    configure :production do
+      require 'uri'
+      uri = URI.parse ENV["DATABASE_URL"]
+      $db = PG.connect dbname: uri.path[1..-1],
+                         host: uri.host,
+                         port: uri.port,
+                         user: uri.user,
+                     password: uri.password
+    end
+
+
 
     def logged_in?
       !!session[:user_id]
@@ -23,8 +35,7 @@ module NewDadsChat
     get('/') do
 
       @results = $db.exec_params("SELECT * FROM messages")
-      @comments = $db.exec_params("SELECT messages.*, comments.* FROM messages LEFT JOIN comments
-        ON comments.message_id = messages.id WHERE messages.user_id = comments.user_id;")
+      @comments = $db.exec_params("SELECT messages.*, comments.* FROM messages LEFT JOIN comments ON comments.message_id = messages.id WHERE messages.id  = comments.user_id;")
 
 
 
