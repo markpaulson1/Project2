@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS newdads;
-CREATE DATABASE newdads;
-\c newdads
-
+-- DROP DATABASE IF EXISTS newdads;
+-- CREATE DATABASE newdads;
+-- \c newdads
+DROP TABLE IF EXISTS users, messages, comments;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,

@@ -1,5 +1,5 @@
-\c newdads
-TRUNCATE TABLE users, messages, comments RESTART IDENTITY;
+-- \c newdads
+-- TRUNCATE TABLE users, messages, comments RESTART IDENTITY;
 
 
 INSERT INTO users
